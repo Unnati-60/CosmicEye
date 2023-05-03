@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> CosmicEyeISS TRACKER </title>
+    <link rel="stylesheet" href="./assets/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="./assets/css/app.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+  integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+  crossorigin=""/>
+  <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+  integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+  crossorigin=""></script>
+  </head>
+  <body id="top">
+
+    <!-- Navbar -->
+    <nav class="navbar py-3 navbar-expand-lg navbar-dark bg-dark" data-aos="fade-down" data-aos-delay="400">
+        <div class="container">
+            <a class="navbar-brand" href="#" style="max-width: 15%;">
+                <img src="./assets/images/logo.png" class="img-fluid">
+             </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor02"
+                aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarColor02">
+                <ul class="navbar-nav ms-auto">
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#main">Home</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#team">About Us</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#services" >services</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#blog">Blog</a>
+                    </li>
+    
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactus">Contact</a>
+                    </li>
+    
+                    <a href="#hero" class="btn btn-primary ms-lg-3">Get Started</a>
+    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="main" class="min-vh-100 d-grid align-content-center py-5">
+        <p style="background-image: url('space.png');"></p>
+
+        <!-- Container -->
+        <div class="container">
+            
+
+            <!-- Row -->
+            <div class="row gy-4 align-items-center">
+
+                <center>
+                    <h1 class="h3" >Welcome To
+                    </h1></center>
+                
+                <!-- Col -->
+                    <img src="./assets/images/biglogo.png" class="img-fluid" alt="">
+                <div>
+                    <center>
+                    <a href="#hero" class="btn mx-2 btn-primary">⮟</a>
+                </center>
+                </div>
+
+                </div>
+            </div>
+            </section>
+
+            <section id="hero" class="min-vh-100 d-grid align-content-center py-5">
+            
+            <!-- Container -->
+            <div class="container">
+
+
+            <!-- Row -->
+            <div class="row gy-4 align-items-center">
+                
+                <!-- Col -->
+                <div class="col-lg-5" data-aos="fade-down" data-aos-delay="400">
+                    <img src="./assets/images/iss3.png" class="img-fluid" alt="">
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-7 px-lg-5" data-aos="fade-down" data-aos-delay="500">
+                    <h1 class="h3">ISS - International Space Station 
+                    </h1>
+                    <h1 class="h3">"THAT’S ONE SMALL STEP FOR MAN, ONE GIANT LEAP FOR MANKIND.""
+                    </h1>
+                    <p class="mt-3 mb-4">The International Space Station is a large spacecraft. It orbits around Earth. It is a home where astronauts live. The space station is also a science lab. Many countries worked together to build it. They also work together to use it. The space station is made of many pieces. The pieces were put together in space by astronauts. The space station's orbit is approximately 250 miles above Earth. NASA uses the station to learn about living and working in space. These lessons will help NASA explore space.
+                    </p>
+                    <div>
+                        <a href="https://www.nasa.gov/audience/forstudents/k-4/stories/nasa-knows/what-is-the-iss-k4.html" class="btn mx-2 btn-primary">Know More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-5">
+
+        <!-- Container -->
+        <div class="container" id="proceed">
+
+            <!-- Row -->
+            <div class="row align-items-center mb-3" data-aos="fade-down">
+
+                <!-- Col -->
+                <div class="col-md-8">
+                    <h6 class="text-primary">SERVICES</h6>
+                    <h2 class="h3">Iss tracker</h2>
+                    <p>This tracks the current location of ISS and Displays it on a map Along with some other information like number of people currently present on iss, their names  </p>
+                    <div id="map" style="height: 500px"></div>
+                </div>
+                <!-- Col -->
+                <div id='iss-data' class="col-md-4 text-md-end">
+                </div>
+
+                <div id="latlong" style="height: 20px;"></div>
+
+            </div>
+
+
+    </section>
+     <!-- Blog -->
+     <section id="blog" class="py-5 bg-2">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row align-items-center mb-3" data-aos="fade-down" data-aos-delay="400">
+
+                <!-- Col -->
+                <div class="col-md-8">
+                    <h6 class="text-primary">Information</h6>
+                    <h2 class="h3">People on board</h2>
+                    <p>This section of website shows the total number of people present in the International space station</p>
+                </div>
+
+                <!-- Col -->
+                <div class="col-md-4 text-md-end">
+                    <a href="https://www.nasa.gov/mission_pages/station/research/overview.html" class="btn btn-primary">Explore More</a>
+                </div>
+
+            </div>
+
+            <!-- Row -->
+            <div class="row g-4">
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="400">
+                    <div class="blog-post p-4 border-custom">
+                        <div class="img-fluid" ><img src="./assets/images/sp.jpg"></div>
+                        <h5 class="my-3">Sergey Prokopyev</h5>
+                        <p>Sergey Valeryevich Prokopyev is a Russian cosmonaut</p>
+                        <a href="https://en.wikipedia.org/wiki/Sergey_Prokopyev_(cosmonaut)">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="500">
+                    <div class="blog-post p-4 border-custom">
+                        <div class="img-fluid"><img src="./assets/images/dp.jpg"></div>
+                        <h5 class="my-3">Dmitry Petelin</h5>
+                        <p>Dmitriy Aleksandrovich Petelin is a Russian cosmonaut 2012 selection group.</p>
+                        <a href="https://en.wikipedia.org/wiki/Dmitry_Petelin">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="600">
+                    <div class="blog-post p-4 border-custom">
+                        <div class="img-fluid" ><img src="./assets/images/fr.jpg"></div>
+                        <h5 class="my-3">Frank Rubio</h5>
+                        <p>Francisco Carlos "Frank" Rubio is a US Army lieutenant colonel and helicopter pilot.</p>
+                        <a href="https://en.wikipedia.org/wiki/Francisco_Rubio_(astronaut)">Read more</a>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="700">
+                    <div class="blog-post p-4 border-custom">
+                        <div class="img-fluid" ><img src="./assets/images/fj.jpg"></div>
+                        <h5 class="my-3">Fei Junlong</h5>
+                        <p>Major general Fei Junlong is a Chinese military pilot and a taikonaut</p>
+                        <a href="https://en.wikipedia.org/wiki/Fei_Junlong">Read more</a>
+                    </div>
+                </div>
+
+            </div>
+            
+        </div>
+
+    </section>
+
+
+    <!-- Team -->
+    <section id="team" class="py-5 ">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row align-items-center mb-3" data-aos="fade-down" data-aos-delay="400">
+
+                <!-- Col -->
+                <div class="col-md-8">
+                    <h6 class="text-primary">TEAM</h6>
+                    <h2 class="h3">Meet our team members</h2>
+                    <p></p>
+                </div>
+
+
+            </div>
+
+            <!-- Row -->
+            <div class="row g-4 text-center">
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="400">
+                    <div class="team-member border-custom py-3">
+                        <div class="team-head p-3">
+                            <img src="./assets/images/f1.jpg" class="img-fluid mb-3" alt="">
+                            <h5 class="mb-0">Unnati Satpute</h5>
+                        </div>
+                        <div class="divider mb-3"></div>
+                        <center>
+                        <div class="links d-flex justify-content-between px-3">
+                            <a href="https://github.com/Unnati-60" class="icon"><i class="lab la-github"></i></a>
+                            <a href="#" class="icon"><i class="lab la-facebook"></i></a>
+                            <a href="#" class="icon"><i class="lab la-instagram"></i></a>
+                            <a href="#" class="icon"><i class="lab la-dribbble"></i></a>
+                        </div></center>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="500">
+                    <div class="team-member border-custom py-3">
+                        <div class="team-head p-3">
+                            <img src="./assets/images/f5.jpg" class="img-fluid mb-3" alt="">
+                            <h5 class="mb-0">Janhvi Patriwar</h5>
+                        </div>
+                        <div class="divider mb-3"></div>
+                        <div class="links d-flex justify-content-between px-3">
+                            <a href="#" class="icon"><i class="lab la-github"></i></a>
+                            <a href="#" class="icon"><i class="lab la-facebook"></i></a>
+                            <a href="#" class="icon"><i class="lab la-instagram"></i></a>
+                            <a href="#" class="icon"><i class="lab la-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="600">
+                    <div class="team-member border-custom py-3">
+                        <div class="team-head p-3">
+                            <img src="./assets/images/f3.jpg" class="img-fluid mb-3" alt="">
+                            <h5 class="mb-0">Shruti Kawale</h5>
+                        </div>
+                        <div class="divider mb-3"></div>
+                        <div class="links d-flex justify-content-between px-3">
+                            <a href="#" class="icon"><i class="lab la-github"></i></a>
+                            <a href="#" class="icon"><i class="lab la-facebook"></i></a>
+                            <a href="#" class="icon"><i class="lab la-instagram"></i></a>
+                            <a href="#" class="icon"><i class="lab la-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-3 col-sm-6" data-aos="fade-down" data-aos-delay="700">
+                    <div class="team-member border-custom py-3">
+                        <div class="team-head p-3">
+                            <img src="./assets/images/f2.jpg" class="img-fluid mb-3" alt="">
+                            <h5 class="mb-0">Shreya Swammy</h5>
+                        </div>
+                        <div class="divider mb-3"></div>
+                        <div class="links d-flex justify-content-between px-3">
+                            <a href="#" class="icon"><i class="lab la-github"></i></a>
+                            <a href="#" class="icon"><i class="lab la-facebook"></i></a>
+                            <a href="#" class="icon"><i class="lab la-instagram"></i></a>
+                            <a href="#" class="icon"><i class="lab la-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+            
+
+
+        </div>
+
+    </section>
+
+   
+    <!-- Contact -->
+    <section id="contact" class="py-5">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row align-items-center mb-3" data-aos="fade-down" data-aos-delay="400">
+
+                <!-- Col -->
+                <div class="col-md-8">
+                    <h6 class="text-primary" id="contactus">CONTACT</h6>
+                    <h2 class="h3">Get in touch</h2>
+                    <p>Keep the track of the upcoming Cosmic events. Register and get reminder notification. </p>
+                </div>
+
+            </div>
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Col -->
+                <div class="col-lg-6 d-grid" data-aos="fade-down" data-aos-delay="400">
+                    <div class="d-grid">
+                        <div class="border-custom p-4 d-flex">
+                            <div class="icon"><i class="las la-phone"></i></div>
+                            <div class="ms-3">
+                                <h5>Phone</h5>
+                                <p class="mb-0">(+33)7 35 55 21 02</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-custom p-4 d-flex">
+                        <div class="icon"><i class="lar la-envelope"></i></div>
+                        <div class="ms-3">
+                            <h5>Email</h5>
+                            <p class="mb-0">seannand@mail.ru</p>
+                        </div>
+                    </div>
+                    <div class="border-custom p-4 d-flex">
+                        <div class="icon"><i class="las la-phone"></i></div>
+                        <div class="ms-3">
+                            <h5>Address</h5>
+                            <p class="mb-0">36 Station Road, Stoke Dabernon, KT11 3BN</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Col -->
+                <div class="col-lg-6" data-aos="fade-down" data-aos-delay="500">
+                    <form action="#" class="border-custom p-4">
+                        <div class="mb-3">
+                            <label class="mb-2" for="name">Name</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="mb-2" for="email">Email</label>
+                            <input type="email" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="mb-2" for="message">Message</label>
+                            <textarea name="#" rows="4" class="form-control"></textarea>
+                        </div>
+                        <button class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Insta Section -->
+    <div id="insta-section" class="row g-0 py-5" data-aos="fade-down" data-aos-delay="400">
+        <div>
+            <a href="https://www.instagram.com/iss/" class="btn btn-primary">Follow us on insta</a>
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="./assets/images/portfolio-01.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="./assets/images/portfolio-02.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="./assets/images/portfolio-03.jpg" class="img-fluid" alt="">
+        </div>
+        <div class="col-6 col-md-3">
+            <img src="./assets/images/portfolio-04.jpg" class="img-fluid" alt="">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer data-aos="fade-down" data-aos-delay="400">
+        
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row g-0">
+
+                <!-- Col -->
+                <div class="col-md-6 p-4 border-custom">
+                        <h4><a href="#">Cosmic Eye.</a></h4>
+                        <a class="navbar-brand" href="#" style="max-width: 15%;">
+                            <img src="./assets/images/logo.png" class="img-fluid">
+                         </a>
+                        <p class="mb-0">Developed by third year cse</p>
+                </div>
+
+                <!-- Col -->
+                <div class="col-md-3 p-4 border-custom">
+                        <h5>Links</h5>
+                        <ul>
+                            <li><a href="#main">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                        </ul>
+                </div>
+
+                <!-- Col -->
+                <div class="col-md-3 p-4 border-custom">
+                        <h5>Follow us</h5>
+                        <ul>
+                            <li><a href="#">GitHub</a></li>
+                            <li><a href="#">Twitter</a></li>
+                            <li><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">YouTube</a></li>
+                        </ul>
+                </div>
+
+                <!-- Col -->
+                <div class="col-12 p-4 border-custom text-center">
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Scroll to top -->
+    <a href="#top" class="icon scroll-to-top"><i class="las la-arrow-up"></i></a>
+    
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script src="./assets/js/app.js"></script>
+  </body>
+</html>
